@@ -3,6 +3,8 @@ package com.example.awmahn.helperbot;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+
+//test text for push check
 public class MainActivity extends AppCompatActivity {
     // This is a test comment...
     //
