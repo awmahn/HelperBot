@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-//test text for push check try 4
+//test text for push check try 5
 public class MainActivity extends AppCompatActivity {
     // This is a test comment...
     //
