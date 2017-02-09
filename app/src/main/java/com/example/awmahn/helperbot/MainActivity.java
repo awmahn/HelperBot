@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoogleSearch(View view) {
-        Uri uri = Uri.parse("http://www.google.com/#q=fish");
+        questions currentQuestions = new questions();
+        Uri uri = Uri.parse(currentQuestions.generateSearchURL());
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
