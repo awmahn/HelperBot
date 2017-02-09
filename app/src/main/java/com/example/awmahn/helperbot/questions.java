@@ -42,6 +42,10 @@ public class questions {
 
     }
 
+    public void setTraditionalSearch(String search) {
+        traditionalSearch = search;
+    }
+
     public String generateSearchURL() {
         String URL = "https://www.google.com/search?";
         URL = URL + "as_q=" + traditionalSearch.replace(' ', '+');

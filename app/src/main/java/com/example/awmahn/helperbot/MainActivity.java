@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 //test text for push check try 5
@@ -20,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoogleSearch(View view) {
+        EditText googleSearchBox = (EditText) findViewById(R.id.googleSearchBox);
+        String search = googleSearchBox.getText().toString();
         questions currentQuestions = new questions();
+        currentQuestions.setTraditionalSearch(search);
         Uri uri = Uri.parse(currentQuestions.generateSearchURL());
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);

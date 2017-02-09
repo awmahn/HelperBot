@@ -26,4 +26,16 @@
         android:layout_marginTop="49dp"
         android:id="@+id/SearchButton"
         android:onClick="GoogleSearch"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Search google"
+        android:ems="10"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:id="@+id/googleSearchBox" />
 </RelativeLayout>
