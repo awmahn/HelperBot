@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-//test text for push check try 5
+
 public class MainActivity extends AppCompatActivity {
     // This is a test comment...
     //
