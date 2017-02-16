@@ -1,10 +1,15 @@
 package com.example.awmahn.helperbot;
 
+import java.util.UUID;
+import java.util.jar.Attributes;
+
 /**
  * Created by Robert on 2/9/2017.
  */
 
 public class questions {
+    private UUID mId;
+    private String name;
     private String traditionalSearch;
     private String exactlySearch;
     private String orSearch;
@@ -23,7 +28,9 @@ public class questions {
     private String usageRights;
 
     public questions() {
-        traditionalSearch = "fish dude man";
+        mId = UUID.randomUUID();
+        name = "Name not set";
+        traditionalSearch = "search not set";
         exactlySearch = "";
         orSearch = "";
         notSearch = "";
@@ -43,7 +50,21 @@ public class questions {
     }
 
     public void setTraditionalSearch(String search) {
+
         traditionalSearch = search;
+    }
+
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public UUID getId() {
+        return mId;
     }
 
     public String generateSearchURL() {

@@ -13,10 +13,22 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     // This is a test comment...
     //
+
+    private Button mLoadSearchButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mLoadSearchButton = (Button) findViewById(R.id.loadSearchButton);
+        mLoadSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, QuestionsListActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 
