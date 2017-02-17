@@ -1,14 +1,18 @@
 package com.example.awmahn.helperbot;
 
+import java.io.Serializable;
+import java.nio.channels.SeekableByteChannel;
 import java.util.UUID;
 import java.util.jar.Attributes;
+import java.io.Serializable;
 
 /**
  * Created by Robert on 2/9/2017.
  */
 
-public class questions {
+public class questions implements Serializable {
     private UUID mId;
+    private String searchType;
     private String name;
     private String traditionalSearch;
     private String exactlySearch;
@@ -29,6 +33,7 @@ public class questions {
 
     public questions() {
         mId = UUID.randomUUID();
+        searchType = "";
         name = "Name not set";
         traditionalSearch = "search not set";
         exactlySearch = "";
@@ -65,6 +70,14 @@ public class questions {
 
     public UUID getId() {
         return mId;
+    }
+
+    public void setSearchType(String searchtype) {
+        searchType = searchtype;
+    }
+
+    public String getSearchType() {
+        return searchType;
     }
 
     public String generateSearchURL() {

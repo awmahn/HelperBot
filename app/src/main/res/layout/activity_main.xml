@@ -51,4 +51,16 @@
         android:layout_below="@+id/SearchButton"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:text="New Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loadSearchButton"
+        android:layout_alignRight="@+id/SearchButton"
+        android:layout_alignEnd="@+id/SearchButton"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp"
+        android:id="@+id/createNewSearchButton"
+        android:onClick="createNewSearch" />
+
 </RelativeLayout>

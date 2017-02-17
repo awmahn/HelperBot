@@ -15,8 +15,8 @@ public class dbHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "searchDB.db";
     public static final String TABLE_NAME = "SearchHistory";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_NAME = "name";
-    public searchDB(Context context, String name,
+    public static final String COLUMN_NAME = "_name";
+    public dbHandler(Context context, String name,
                     SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
@@ -37,7 +37,13 @@ public class dbHandler extends SQLiteOpenHelper {
     }
 
     // Add record to DB
-
+    public void addName (searchDB search) {
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, search.get_name());
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_NAME, null, values);
+        db.close();
+    }
 
     // Delete record from DB
     public void deleteName(String vname){
@@ -47,5 +53,21 @@ public class dbHandler extends SQLiteOpenHelper {
     }
 
     //Print DB contents as String
-
+    public String dbToString() {
+        String dbString = "";
+        SQLiteDatabase db = getWritableDatabase();
+        String myQuery = "SELECT * FROM " + TABLE_NAME;
+        // use cursor to navigate through db
+        Cursor c = db.rawQuery(myQuery, null);
+        c.moveToFirst();
+        while  (!c.isAfterLast()) {
+            if (c.getString(c.getColumnIndex("_name")) != null) {
+                dbString += c.getString(c.getColumnIndex("_name"));
+                dbString += "\n";
+            }
+            c.moveToNext();
+        }
+        db.close();
+        return dbString;
+    }
 }

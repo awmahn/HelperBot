@@ -2,6 +2,7 @@ package com.example.awmahn.helperbot;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     // This is a test comment...
     //
+
+    private final String QUESTION = "QUESTION_PARCELABLE_KEY";
 
     private Button mLoadSearchButton;
 
@@ -40,6 +43,19 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse(currentQuestions.generateSearchURL());
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
+    }
+
+    public void createNewSearch(View view) {
+        questions question = new questions();
+        Intent i = new Intent();
+        i.putExtra("question", question);
+        i.setClass(this, DecisionActivity.class);
+        startActivity(i);
+        //make decisionActivity class and layout
+        //use this to retrieve the object
+        //Intent i = getIntent();
+        //Deneme dene = (Deneme)i.getSerializableExtra("sampleObject");
+
     }
 
 }
