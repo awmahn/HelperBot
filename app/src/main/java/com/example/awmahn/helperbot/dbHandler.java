@@ -7,12 +7,14 @@ import android.content.Context;
 import android.content.ContentValues;
 
 
+//basis for code is from Android recipe 5
 public class dbHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "searchDB.db";
     public static final String TABLE_NAME = "SearchHistory";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "_name";
+    public static final String COLUMN_URL = "_url";
     public dbHandler(Context context, String name,
                     SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
@@ -22,7 +24,7 @@ public class dbHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String myQuery = "CREATE TABLE " + TABLE_NAME + "(" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAME + " TEXT " +
+                COLUMN_NAME + " TEXT " + COLUMN_URL + " TEXT " +
                 ");";
         db.execSQL(myQuery);
     }
@@ -34,19 +36,20 @@ public class dbHandler extends SQLiteOpenHelper {
     }
 
     // Add record to DB
-    public void addName (searchDB search) {
+    public void addSearch (searchDB search) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, search.get_name());
+        values.put(COLUMN_URL, search.get_url());
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
 
     // Delete record from DB
-    public void deleteName(String vname){
+    public void deleteSearch(int id){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME
-        + "= \"" + vname + "\";");
+        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_ID
+        + "= \"" + id + "\";");
     }
 
     //Print DB contents as String
@@ -58,8 +61,9 @@ public class dbHandler extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(myQuery, null);
         c.moveToFirst();
         while  (!c.isAfterLast()) {
-            if (c.getString(c.getColumnIndex("_name")) != null) {
+            if (c.getString(c.getColumnIndex("_name")) != null && c.getString(c.getColumnIndex("_url")) != null) {
                 dbString += c.getString(c.getColumnIndex("_name"));
+                dbString += c.getString(c.getColumnIndex("_url"));
                 dbString += "\n";
             }
             c.moveToNext();
