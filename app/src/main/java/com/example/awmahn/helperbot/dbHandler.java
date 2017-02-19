@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.content.Context;
 import android.content.ContentValues;
 
-/**
- * Created by Lenovo on 2/16/2017.
- */
 
 public class dbHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;

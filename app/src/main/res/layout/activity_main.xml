@@ -12,16 +12,6 @@
     tools:context="com.example.awmahn.helperbot.MainActivity">
 
 
-    <Button
-        android:text="Search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/SearchButton"
-        android:onClick="GoogleSearch"
-        android:layout_marginTop="42dp"
-        android:layout_below="@+id/googleSearchBox"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,9 +35,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:id="@+id/loadSearchButton"
         android:text="Load Previous Search"
+        android:layout_marginTop="54dp"
         android:layout_below="@+id/SearchButton"
         android:layout_centerHorizontal="true" />
 
@@ -55,12 +45,21 @@
         android:text="New Search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loadSearchButton"
-        android:layout_alignRight="@+id/SearchButton"
-        android:layout_alignEnd="@+id/SearchButton"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp"
         android:id="@+id/createNewSearchButton"
-        android:onClick="createNewSearch" />
+        android:onClick="createNewSearch"
+        android:layout_below="@+id/loadSearchButton"
+        android:layout_alignLeft="@+id/loadSearchButton"
+        android:layout_alignStart="@+id/loadSearchButton"
+        android:layout_alignRight="@+id/loadSearchButton"
+        android:layout_alignEnd="@+id/loadSearchButton" />
+
+    <Button
+        android:text="Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SearchButton"
+        android:onClick="GoogleSearch"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

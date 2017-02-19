@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by Andrew on 2/16/2017.
- */
 
 public class searchDB extends AppCompatActivity {
 
