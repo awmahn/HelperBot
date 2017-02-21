@@ -51,11 +51,7 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("question", question);
         i.setClass(this, DecisionActivity.class);
         startActivity(i);
-        //make decisionActivity class and layout
-        //use this to retrieve the object
-        //Intent i = getIntent();
-        //Deneme dene = (Deneme)i.getSerializableExtra("sampleObject");
-
+        //
     }
 
 }
