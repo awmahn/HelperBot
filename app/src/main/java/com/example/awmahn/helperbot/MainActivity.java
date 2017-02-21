@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("question", question);
         i.setClass(this, DecisionActivity.class);
         startActivity(i);
-        //
+
     }
 
 }
