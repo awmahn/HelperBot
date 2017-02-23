@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">HelperBot</string>
     <string name="title_activity_osfor_antivirus">OSForAntivirusActivity</string>
+    <string name="title_activity_not_start_search">NotStartSearchActivity</string>
 </resources>

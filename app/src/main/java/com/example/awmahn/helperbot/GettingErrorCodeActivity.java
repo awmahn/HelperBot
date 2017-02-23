@@ -38,7 +38,7 @@ public class GettingErrorCodeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
-                i.setClass(GettingErrorCodeActivity.this, GettingErrorCodeActivity.class);
+                i.setClass(GettingErrorCodeActivity.this, HowProgramMalfunctioningActivity.class);
                 startActivity(i);
                 finish();
             }
