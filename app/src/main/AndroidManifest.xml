@@ -18,7 +18,18 @@
         <activity android:name=".QuestionsListActivity" />
         <activity android:name=".DecisionActivity" />
         <activity android:name=".TriedOnOffActivity" />
-        <activity android:name=".IsItAVirusActivity"></activity>
+        <activity android:name=".IsItAVirusActivity" />
+        <activity android:name=".HaveRunAntivirusActivity" />
+        <activity android:name=".GetAntivirusActivity" />
+        <activity android:name=".DoHaveAntivirusActivity" />
+        <activity android:name=".PleaseRunAntivirusActivity" />
+        <activity android:name=".OSForAntivirusActivity" />
+        <activity android:name=".NameVirusActivity" />
+        <activity android:name=".DidDetectVirusActivity" />
+        <activity android:name=".DidPowerEraseActivity" />
+        <activity android:name=".WantPowerEraseActivity" />
+        <activity android:name=".GettingErrorCodeActivity" />
+        <activity android:name=".ObtainErrorCodeActivity"></activity>
     </application>
 
 </manifest>

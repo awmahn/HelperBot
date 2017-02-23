@@ -35,7 +35,7 @@ public class questions implements Serializable {
         mId = UUID.randomUUID();
         searchType = "";
         name = "Name not set";
-        traditionalSearch = "search not set";
+        traditionalSearch = "";
         exactlySearch = "";
         orSearch = "";
         notSearch = "";
@@ -57,6 +57,10 @@ public class questions implements Serializable {
     public void setTraditionalSearch(String search) {
 
         traditionalSearch = search;
+    }
+
+    public String getTraditionalSearch() {
+        return traditionalSearch;
     }
 
 
