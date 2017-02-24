@@ -9,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.awmahn.helperbot.MainActivity">
+    tools:context="com.example.awmahn.helperbot.MainActivity"
+    android:background="@android:color/background_light">
 
 
     <ImageView
