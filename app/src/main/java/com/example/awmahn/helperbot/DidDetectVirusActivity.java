@@ -54,11 +54,15 @@ public class DidDetectVirusActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
-                if (mActivityBefore.equals("PleaseRunAntivirusActivity")) {
-                    i.setClass(DidDetectVirusActivity.this,PleaseRunAntivirusActivity.class);
-                }
-                else if (mActivityBefore.equals("HaveRunAntivirusActivity")) {
-                    i.setClass(DidDetectVirusActivity.this, HaveRunAntivirusActivity.class);
+
+                if (mActivityBefore != null) {
+                    if (mActivityBefore.equals("PleaseRunAntivirusActivity")) {
+                        i.setClass(DidDetectVirusActivity.this, PleaseRunAntivirusActivity.class);
+                    } else if (mActivityBefore.equals("HaveRunAntivirusActivity")) {
+                        i.setClass(DidDetectVirusActivity.this, HaveRunAntivirusActivity.class);
+                    } else {
+                        i.setClass(DidDetectVirusActivity.this, HaveRunAntivirusActivity.class);
+                    }
                 }
                 else {
                     i.setClass(DidDetectVirusActivity.this, HaveRunAntivirusActivity.class);

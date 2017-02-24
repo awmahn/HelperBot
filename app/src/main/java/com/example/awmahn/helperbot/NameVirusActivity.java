@@ -53,17 +53,18 @@ public class NameVirusActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
-                if (mActivityBefore.equals("GetAntivirusActivity")) {
-                    i.setClass(NameVirusActivity.this, GetAntivirusActivity.class);
-                }
-                else if (mActivityBefore.equals("DidPowerEraseActivity")) {
-                    i.setClass(NameVirusActivity.this,DidPowerEraseActivity.class);
-                }
-                else if (mActivityBefore.equals("WantPowerEraseActivity")) {
-                    i.setClass(NameVirusActivity.this, WantPowerEraseActivity.class);
-                }
-                else if (mActivityBefore.equals("DidDetectVirusActivity")) {
-                    i.setClass(NameVirusActivity.this, DidDetectVirusActivity.class);
+                if (mActivityBefore != null) {
+                    if (mActivityBefore.equals("GetAntivirusActivity")) {
+                        i.setClass(NameVirusActivity.this, GetAntivirusActivity.class);
+                    } else if (mActivityBefore.equals("DidPowerEraseActivity")) {
+                        i.setClass(NameVirusActivity.this, DidPowerEraseActivity.class);
+                    } else if (mActivityBefore.equals("WantPowerEraseActivity")) {
+                        i.setClass(NameVirusActivity.this, WantPowerEraseActivity.class);
+                    } else if (mActivityBefore.equals("DidDetectVirusActivity")) {
+                        i.setClass(NameVirusActivity.this, DidDetectVirusActivity.class);
+                    } else {
+                        i.setClass(NameVirusActivity.this, DidDetectVirusActivity.class);
+                    }
                 }
                 else {
                     i.setClass(NameVirusActivity.this, DidDetectVirusActivity.class);

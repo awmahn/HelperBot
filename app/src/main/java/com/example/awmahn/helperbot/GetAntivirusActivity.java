@@ -38,7 +38,7 @@ public class GetAntivirusActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
-                i.putExtra("activityBefore", "GerAntivirusActivity");
+                i.putExtra("activityBefore", "GetAntivirusActivity");
                 i.setClass(GetAntivirusActivity.this, NameVirusActivity.class);
                 startActivity(i);
                 finish();

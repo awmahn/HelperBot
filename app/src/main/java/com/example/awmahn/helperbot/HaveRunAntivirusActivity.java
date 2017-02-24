@@ -27,7 +27,7 @@ public class HaveRunAntivirusActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
                 i.putExtra("activityBefore", "HaveRunAntivirusActivity");
-                i.setClass(HaveRunAntivirusActivity.this, NameVirusActivity.class);
+                i.setClass(HaveRunAntivirusActivity.this, DidDetectVirusActivity.class);
                 startActivity(i);
                 finish();
             }

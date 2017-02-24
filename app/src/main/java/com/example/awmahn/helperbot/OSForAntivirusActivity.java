@@ -21,13 +21,13 @@ public class OSForAntivirusActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
-        mContinueButton = (Button) findViewById(R.id.do_Have_Antivirus_Yes_Button);
+        mContinueButton = (Button) findViewById(R.id.os_For_Antivirus_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText osEditText = (EditText) findViewById(R.id.os_For_Antivirus_EditText);
                 String os = osEditText.getText().toString();
-                mQuestion.setTraditionalSearch("anitvirus for " + os);
+                mQuestion.setTraditionalSearch("antivirus for " + os);
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 //save to database
@@ -38,7 +38,7 @@ public class OSForAntivirusActivity extends AppCompatActivity {
 
 
 
-        mBackButton = (Button) findViewById(R.id.do_Have_Antivirus_Back_Button);
+        mBackButton = (Button) findViewById(R.id.os_For_Antivirus_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
