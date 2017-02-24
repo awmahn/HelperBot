@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_did_detect_virus"
     android:layout_width="match_parent"
@@ -9,15 +10,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.DidDetectVirusActivity">
-
-    <TextView
-        android:text="Did your virus scan detect a virus?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-        android:id="@+id/textView9" />
 
     <Button
         android:text="Yes"
@@ -29,16 +21,6 @@
         android:id="@+id/did_Detect_Virus_Yes_Button" />
 
     <Button
-        android:text="No"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/did_Detect_Virus_Yes_Button"
-        android:layout_alignLeft="@+id/did_Detect_Virus_Yes_Button"
-        android:layout_alignStart="@+id/did_Detect_Virus_Yes_Button"
-        android:layout_marginTop="62dp"
-        android:id="@+id/did_Detect_Virus_No_Button" />
-
-    <Button
         android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,4 +29,37 @@
         android:layout_alignEnd="@+id/did_Detect_Virus_No_Button"
         android:layout_marginTop="44dp"
         android:id="@+id/did_Detect_Virus_Back_Button" />
+
+    <TextView
+        android:text="Did your virus scan detect a virus?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:id="@+id/textView9"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
+    <Button
+        android:text="No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/did_Detect_Virus_No_Button"
+        android:layout_below="@+id/did_Detect_Virus_Yes_Button"
+        android:layout_alignLeft="@+id/did_Detect_Virus_Yes_Button"
+        android:layout_alignStart="@+id/did_Detect_Virus_Yes_Button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/troublebanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView9" />
 </RelativeLayout>

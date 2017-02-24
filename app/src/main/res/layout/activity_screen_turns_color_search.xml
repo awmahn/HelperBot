@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_screen_turns_color_search"
     android:layout_width="match_parent"
@@ -10,15 +11,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.ScreenTurnsColorSearchActivity">
 
-    <TextView
-        android:text="please enter the name of the program that is malfunctioning and then select the color your screen turns."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:id="@+id/textView17" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,44 +20,71 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
         android:id="@+id/screen_Turns_Color_EditText"
-        android:hint="Program Name" />
-
-    <Button
-        android:text="White"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/screen_Turns_Color_EditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:id="@+id/screen_Turns_Color_White_Button" />
-
-    <Button
-        android:text="Black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/screen_Turns_Color_White_Button"
-        android:layout_alignRight="@+id/screen_Turns_Color_White_Button"
-        android:layout_alignEnd="@+id/screen_Turns_Color_White_Button"
-        android:layout_marginTop="19dp"
-        android:id="@+id/screen_Turns_Color_Black_Button" />
-
-    <Button
-        android:text="Blue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/screen_Turns_Color_Black_Button"
-        android:layout_alignRight="@+id/screen_Turns_Color_Black_Button"
-        android:layout_alignEnd="@+id/screen_Turns_Color_Black_Button"
-        android:layout_marginTop="20dp"
-        android:id="@+id/screen_Turns_Color_Blue_Button" />
+        android:hint="Program Name"
+        android:textAlignment="center" />
 
     <Button
         android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/screen_Turns_Color_Blue_Button"
-        android:layout_alignLeft="@+id/screen_Turns_Color_Blue_Button"
-        android:layout_alignStart="@+id/screen_Turns_Color_Blue_Button"
-        android:layout_marginTop="27dp"
-        android:id="@+id/screen_Turns_Color_Back_Button" />
+        android:layout_marginTop="67dp"
+        android:id="@+id/screen_Turns_Color_Back_Button"
+        android:layout_below="@+id/screen_Turns_Color_Black_Button"
+        android:layout_alignLeft="@+id/screen_Turns_Color_Black_Button"
+        android:layout_alignStart="@+id/screen_Turns_Color_Black_Button" />
+
+    <Button
+        android:text="Blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/screen_Turns_Color_Blue_Button"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignBaseline="@+id/screen_Turns_Color_Black_Button"
+        android:layout_alignBottom="@+id/screen_Turns_Color_Black_Button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/troublebanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView16" />
+
+    <TextView
+        android:text="Please enter the name of the program that is malfunctioning and then select the color your screen is displaying."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView17"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/imageView16"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/screen_Turns_Color_White_Button"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_below="@+id/screen_Turns_Color_EditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
+
+    <Button
+        android:text="Black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/screen_Turns_Color_Black_Button"
+        android:layout_alignBaseline="@+id/screen_Turns_Color_White_Button"
+        android:layout_alignBottom="@+id/screen_Turns_Color_White_Button"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

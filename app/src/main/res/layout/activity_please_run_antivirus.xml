@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_please_run_antivirus"
     android:layout_width="match_parent"
@@ -9,15 +10,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.PleaseRunAntivirusActivity">
-
-    <TextView
-        android:text="Please run a virus scan with your antivirus software."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:id="@+id/textView6" />
 
     <Button
         android:text="Continue"
@@ -37,4 +29,24 @@
         android:layout_alignEnd="@+id/please_Run_Antivirus_Continue_Button"
         android:layout_marginTop="46dp"
         android:id="@+id/please_Run_Antivirus_Back_Button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/troublebanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView15" />
+
+    <TextView
+        android:text="Please run a virus scan with your antivirus software."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/imageView15"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

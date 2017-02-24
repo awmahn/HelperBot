@@ -18,7 +18,9 @@
         android:id="@+id/textView13"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark" />
 
     <TextView
         android:text="What is the name of the program? ex: Microsoft Office Word"
@@ -27,7 +29,9 @@
         android:layout_below="@+id/textView13"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="124dp"
-        android:id="@+id/textView14" />
+        android:id="@+id/textView14"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
 
     <Button
         android:text="Continue"
@@ -57,7 +61,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:id="@+id/obtain_Error_Code_Error_Code_EditText"
-        android:hint="Error Code" />
+        android:hint="Error Code"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -69,5 +74,6 @@
         android:layout_alignEnd="@+id/obtain_Error_Code_Error_Code_EditText"
         android:layout_marginTop="21dp"
         android:id="@+id/obtain_Error_Code_Program_Name_EditText"
-        android:hint="Program Name" />
+        android:hint="Program Name"
+        android:textAlignment="center" />
 </RelativeLayout>

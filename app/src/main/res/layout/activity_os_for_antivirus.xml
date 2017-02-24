@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_os_for_antivirus"
     android:layout_width="match_parent"
@@ -10,41 +11,63 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.OSForAntivirusActivity">
 
-    <TextView
-        android:text="What operating System does the infected device use?"
+    <Button
+        android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:id="@+id/os_For_Antivirus_Back_Button"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:id="@+id/textView7" />
+        android:layout_marginBottom="64dp" />
+
+    <TextView
+        android:text="What operating system does the infected device use?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView19"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/imageView7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Example: Windows 7, or Mac OS Sierra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textView19"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_marginTop="47dp"
         android:id="@+id/os_For_Antivirus_EditText"
         android:hint="Enter Operating System"
-        android:layout_below="@+id/textView7"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/os_For_Antivirus_Continue_Button" />
+        android:id="@+id/os_For_Antivirus_Continue_Button"
+        android:layout_above="@+id/os_For_Antivirus_Back_Button"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="Back"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/os_For_Antivirus_Continue_Button"
-        android:layout_alignLeft="@+id/os_For_Antivirus_Continue_Button"
-        android:layout_alignStart="@+id/os_For_Antivirus_Continue_Button"
-        android:layout_marginTop="81dp"
-        android:id="@+id/os_For_Antivirus_Back_Button" />
+        app:srcCompat="@drawable/troublebanner"
+        android:id="@+id/imageView7"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

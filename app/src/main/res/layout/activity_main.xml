@@ -12,17 +12,6 @@
     tools:context="com.example.awmahn.helperbot.MainActivity">
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/googleSearchBox"
-        android:layout_marginTop="127dp"
-        android:hint="Search Google"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,26 +21,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loadSearchButton"
-        android:text="Load Previous Search"
-        android:layout_marginTop="54dp"
-        android:layout_below="@+id/SearchButton"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="New Search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/createNewSearchButton"
-        android:onClick="createNewSearch"
-        android:layout_below="@+id/loadSearchButton"
-        android:layout_alignLeft="@+id/loadSearchButton"
-        android:layout_alignStart="@+id/loadSearchButton"
-        android:layout_alignRight="@+id/loadSearchButton"
-        android:layout_alignEnd="@+id/loadSearchButton" />
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/googleSearchBox"
+        android:hint="Search Google"
+        android:textAlignment="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
 
     <Button
         android:text="Search"
@@ -59,7 +39,47 @@
         android:layout_height="wrap_content"
         android:id="@+id/SearchButton"
         android:onClick="GoogleSearch"
-        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loadSearchButton"
+        android:text="Search History"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/createNewSearchButton"
+        android:textSize="18sp"
+        android:background="@color/colorPrimary"
+        android:layout_alignRight="@+id/googleSearchBox"
+        android:layout_alignEnd="@+id/googleSearchBox"
+        android:layout_alignLeft="@+id/googleSearchBox"
+        android:layout_alignStart="@+id/googleSearchBox"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:text="New Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createNewSearchButton"
+        android:onClick="createNewSearch"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/loadSearchButton"
+        android:layout_alignStart="@+id/loadSearchButton"
+        android:layout_alignRight="@+id/loadSearchButton"
+        android:layout_alignEnd="@+id/loadSearchButton"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:text="Select an option to get started"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/createNewSearchButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:id="@+id/textView20"
+        android:textSize="18sp" />
 
 </RelativeLayout>

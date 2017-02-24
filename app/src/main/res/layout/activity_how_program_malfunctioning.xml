@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_how_program_malfunctioning"
     android:layout_width="match_parent"
@@ -9,16 +10,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.HowProgramMalfunctioningActivity">
-
-    <TextView
-        android:text="Which one of these choices most represents how the program you are trying to run is malfunctioning?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:id="@+id/textView15"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Not Starting"
@@ -33,27 +24,44 @@
         android:text="Screen turns Black, White, or Blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/how_Program_Malfunctioning_Screen_Turns_Color_Button"
         android:layout_below="@+id/how_Program_Malfunctioning_Not_Starting_Button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
-        android:id="@+id/how_Program_Malfunctioning_Screen_Turns_Color_Button" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/how_Program_Malfunctioning_Other_Button"
         android:layout_below="@+id/how_Program_Malfunctioning_Screen_Turns_Color_Button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
-        android:id="@+id/how_Program_Malfunctioning_Other_Button" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/how_Program_Malfunctioning_Back_Button"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/how_Program_Malfunctioning_Other_Button"
-        android:layout_alignStart="@+id/how_Program_Malfunctioning_Other_Button"
-        android:layout_marginBottom="46dp"
-        android:id="@+id/how_Program_Malfunctioning_Back_Button" />
+        android:layout_alignStart="@+id/how_Program_Malfunctioning_Other_Button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/troublebanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView12" />
+
+    <TextView
+        android:text="Which one of these choices most represents how the program you are trying to run is malfunctioning?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView15"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/imageView12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

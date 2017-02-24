@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_want_power_erase"
     android:layout_width="match_parent"
@@ -10,35 +11,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.WantPowerEraseActivity">
 
-    <TextView
-        android:text="Would you like to get a second opinion antivirus software? These kinds of programs are useful to run when a primary antivirus is not finding anything."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:id="@+id/textView11"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView11"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:id="@+id/want_Power_Erase_Yes_Button"
-        android:text="Yes" />
-
-    <Button
-        android:text="No"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/want_Power_Erase_Yes_Button"
-        android:layout_alignRight="@+id/want_Power_Erase_Yes_Button"
-        android:layout_alignEnd="@+id/want_Power_Erase_Yes_Button"
-        android:layout_marginTop="62dp"
-        android:id="@+id/want_Power_Erase_No_Button" />
-
     <Button
         android:text="Back"
         android:layout_width="wrap_content"
@@ -48,4 +20,42 @@
         android:layout_alignStart="@+id/want_Power_Erase_No_Button"
         android:layout_marginTop="60dp"
         android:id="@+id/want_Power_Erase_Back_Button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/want_Power_Erase_Yes_Button"
+        android:text="Yes"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:id="@+id/want_Power_Erase_No_Button"
+        android:layout_below="@+id/want_Power_Erase_Yes_Button"
+        android:layout_alignLeft="@+id/want_Power_Erase_Yes_Button"
+        android:layout_alignStart="@+id/want_Power_Erase_Yes_Button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/troublebanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView17" />
+
+    <TextView
+        android:text="Would you like to get a second opinion antivirus software? These kinds of programs are useful to run when a primary antivirus is not finding anything."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:textSize="18sp"
+        android:layout_below="@+id/imageView17"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/background_dark"
+        android:textAlignment="center" />
 </RelativeLayout>
