@@ -96,7 +96,7 @@ public class QuestionsListActivity extends AppCompatActivity{
         public void onBindViewHolder(QuestionAdapter.ViewHolder holder, int position) {
             final searchDB search = mSearches.get(position);
             TextView textView = holder.mNameTextView;
-            textView.setText(search.get_id());
+            textView.setText(search.get_name());
 
             Button searchButton = holder.mSearchButton;
             searchButton.setOnClickListener(new View.OnClickListener() {
