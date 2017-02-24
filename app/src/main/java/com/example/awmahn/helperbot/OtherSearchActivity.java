@@ -45,7 +45,7 @@ public class OtherSearchActivity extends AppCompatActivity {
         });
 
 
-        mBackButton = (Button) findViewById(R.id.other_Search_Continue_Button);
+        mBackButton = (Button) findViewById(R.id.other_Search_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

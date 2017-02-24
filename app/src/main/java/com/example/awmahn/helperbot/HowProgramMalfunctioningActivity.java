@@ -16,6 +16,7 @@ public class HowProgramMalfunctioningActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_how_program_malfunctioning);
 
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
