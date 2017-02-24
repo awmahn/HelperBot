@@ -13,6 +13,7 @@ public class OtherSearchActivity extends AppCompatActivity {
     private Button mContinueButton;
     private EditText mProgramName;
     private Button mBackButton;
+    dbHandler mdbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,23 @@ public class OtherSearchActivity extends AppCompatActivity {
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 //save to database
+
+                //open database
+                mdbHandler = new dbHandler(getApplicationContext(), null);
+
+                // build search object to add to database
+                searchDB search = new searchDB();
+                search.set_name(mQuestion.getName());
+                search.set_url(mQuestion.generateSearchURL());
+
+                //add search to database
+                mdbHandler.addSearch(search);
+
+
+                //close database
+                mdbHandler.close();
+
+
                 startActivity(intent);
                 finish();
             }

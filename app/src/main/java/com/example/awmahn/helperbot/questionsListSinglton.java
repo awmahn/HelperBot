@@ -13,6 +13,8 @@ import java.util.UUID;
 public class questionsListSinglton {
     private static questionsListSinglton sQuestionsListSinglton;
 
+    dbHandler mdbHandler;
+
     private List<questions> mQuestions;
 
     public static questionsListSinglton get(Context context) {
@@ -23,12 +25,10 @@ public class questionsListSinglton {
     }
 
     private questionsListSinglton(Context context) {
+        mdbHandler = new dbHandler(context, null);
+
         mQuestions = new ArrayList<>();
-        for (int i = 0; i < 100 ; i++) {
-            questions question = new questions();
-            question.setName("Search #" + i);
-            mQuestions.add(question);
-        }
+
     }
 
     public List<questions> getmQuestions() {

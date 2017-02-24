@@ -18,16 +18,16 @@ public class dbHandler extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "_name";
     public static final String COLUMN_URL = "_url";
-    public dbHandler(Context context, String name,
-                    SQLiteDatabase.CursorFactory factory, int version) {
+    public dbHandler(Context context,
+                    SQLiteDatabase.CursorFactory factory) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String myQuery = "CREATE TABLE " + TABLE_NAME + "(" +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAME + " TEXT " + COLUMN_URL + " TEXT " +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_NAME + " TEXT," + COLUMN_URL + " TEXT" +
                 ");";
         db.execSQL(myQuery);
     }

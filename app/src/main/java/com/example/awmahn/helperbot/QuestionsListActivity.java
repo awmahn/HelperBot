@@ -17,8 +17,8 @@ import java.util.List;
 
 
 public class QuestionsListActivity extends AppCompatActivity{
-    private questionsListSinglton QuestionsList = questionsListSinglton.get(this);
-    private List<questions> Questions = QuestionsList.getmQuestions();
+    dbHandler mdbHandler;
+    private List<searchDB> Searches;
 
 
 
@@ -31,8 +31,12 @@ public class QuestionsListActivity extends AppCompatActivity{
 
         RecyclerView rvQuestions = (RecyclerView) findViewById(R.id.rvQuestions);
 
+        mdbHandler = new dbHandler(getApplicationContext(), null);
+        Searches = mdbHandler.findAllSearches();
+        mdbHandler.close();
 
-        QuestionAdapter mAdapter= new QuestionAdapter(this, Questions);
+
+        QuestionAdapter mAdapter= new QuestionAdapter(this, Searches);
         rvQuestions.setAdapter(mAdapter);
 
         rvQuestions.setLayoutManager(new LinearLayoutManager(this));
@@ -44,11 +48,11 @@ public class QuestionsListActivity extends AppCompatActivity{
 
 
     private class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> {
-        private List<questions> mQuestions;
+        private List<searchDB> mSearches;
         private Context mContext;
 
-        public QuestionAdapter(Context context, List<questions> Questiones) {
-            mQuestions = Questiones;
+        public QuestionAdapter(Context context, List<searchDB> Searches) {
+            mSearches = Searches;
             mContext = context;
         }
 
@@ -84,14 +88,14 @@ public class QuestionsListActivity extends AppCompatActivity{
 
         @Override
         public void onBindViewHolder(QuestionAdapter.ViewHolder holder, int position) {
-            questions question = mQuestions.get(position);
+            searchDB search = mSearches.get(position);
             TextView textView = holder.mNameTextView;
-            textView.setText(question.getName());
+            textView.setText(search.get_id());
         }
 
         @Override
         public int getItemCount() {
-            return mQuestions.size();
+            return mSearches.size();
         }
     }
 
