@@ -48,7 +48,7 @@ public class TriedOnOffActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
-                i.setClass(TriedOnOffActivity.this, DecisionActivity.class);
+                i.setClass(TriedOnOffActivity.this, HardwareProblemType.class);
                 startActivity(i);
                 finish();
             }

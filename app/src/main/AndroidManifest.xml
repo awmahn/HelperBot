@@ -34,7 +34,8 @@
         <activity android:name=".NotStartSearchActivity" />
         <activity android:name=".ScreenTurnsColorSearchActivity" />
         <activity android:name=".HardwareProblemType" />
-        <activity android:name=".OtherSearchActivity"></activity>
+        <activity android:name=".OtherSearchActivity" />
+        <activity android:name=".hardwareNotTurningOn"></activity>
     </application>
 
 </manifest>
