@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.content.Context;
 import android.content.ContentValues;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 //basis for code is from Android recipe 5
 public class dbHandler extends SQLiteOpenHelper {
@@ -50,6 +53,50 @@ public class dbHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_ID
         + "= \"" + id + "\";");
+        db.close();
+    }
+
+    public searchDB findSearch(int id) {
+        SQLiteDatabase db = getReadableDatabase();
+        String Query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + id;
+
+        Cursor c = db.rawQuery(Query, null);
+
+        if (c != null) {
+            c.moveToFirst();
+        }
+        searchDB search = new searchDB();
+        search.set_id(c.getInt(c.getColumnIndex(COLUMN_ID)));
+        search.set_name(c.getString(c.getColumnIndex(COLUMN_NAME)));
+        search.set_url(c.getString(c.getColumnIndex(COLUMN_URL)));
+
+        db.close();
+
+        return search;
+    }
+
+    public List<searchDB> findAllSearches() {
+        List<searchDB> searches = new ArrayList<searchDB>();
+        SQLiteDatabase db  = getReadableDatabase();
+        String Query = "SELECT * FROM " + TABLE_NAME;
+
+        Cursor c = db.rawQuery(Query, null);
+
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            if(c.getString(c.getColumnIndex(COLUMN_NAME)) != null && c.getString(c.getColumnIndex(COLUMN_URL)) != null) {
+                searchDB search = new searchDB();
+                search.set_id(c.getInt(c.getColumnIndex(COLUMN_ID)));
+                search.set_name(c.getString(c.getColumnIndex(COLUMN_NAME)));
+                search.set_url(c.getString(c.getColumnIndex(COLUMN_URL)));
+
+                searches.add(search);
+            }
+            c.moveToNext();
+        }
+        db.close();
+
+        return searches;
     }
 
     //Print DB contents as String
@@ -61,9 +108,10 @@ public class dbHandler extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(myQuery, null);
         c.moveToFirst();
         while  (!c.isAfterLast()) {
-            if (c.getString(c.getColumnIndex("_name")) != null && c.getString(c.getColumnIndex("_url")) != null) {
-                dbString += c.getString(c.getColumnIndex("_name"));
-                dbString += c.getString(c.getColumnIndex("_url"));
+            if (c.getString(c.getColumnIndex(COLUMN_NAME)) != null && c.getString(c.getColumnIndex(COLUMN_URL)) != null) {
+                dbString += c.getInt(c.getColumnIndex(COLUMN_ID));
+                dbString += c.getString(c.getColumnIndex(COLUMN_NAME));
+                dbString += c.getString(c.getColumnIndex(COLUMN_URL));
                 dbString += "\n";
             }
             c.moveToNext();
