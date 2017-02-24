@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:id="@+id/softwareIssueButton"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/hardwareIssueButton"
         android:background="@color/colorPrimary"
         android:textSize="18sp"
         android:textColor="@android:color/background_light"
@@ -52,21 +52,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:id="@+id/button3"
-        android:text="Hardware Issue"
-        android:layout_below="@+id/button2"
-        android:background="@color/colorPrimary"
-        android:textSize="18sp"
-        android:textColor="@android:color/background_light"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,4 +59,19 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/imageView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/hardwareIssueButton"
+        android:text="Hardware Issue"
+        android:background="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

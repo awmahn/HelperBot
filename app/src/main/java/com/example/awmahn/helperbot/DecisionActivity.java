@@ -10,6 +10,7 @@ public class DecisionActivity extends AppCompatActivity {
     private questions mQuestion;
     private Button mSoftwareProblemButton;
     private Button mBackButton;
+    private Button mHardwareProblemButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,18 @@ public class DecisionActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
                 i.setClass(DecisionActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        mHardwareProblemButton = (Button) findViewById(R.id.hardwareIssueButton);
+        mHardwareProblemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+                i.setClass(DecisionActivity.this, HardwareProblemType.class);
                 startActivity(i);
                 finish();
             }

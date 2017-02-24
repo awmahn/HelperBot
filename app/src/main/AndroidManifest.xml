@@ -33,6 +33,7 @@
         <activity android:name=".HowProgramMalfunctioningActivity" />
         <activity android:name=".NotStartSearchActivity" />
         <activity android:name=".ScreenTurnsColorSearchActivity" />
+        <activity android:name=".HardwareProblemType" />
         <activity android:name=".OtherSearchActivity"></activity>
     </application>
 
