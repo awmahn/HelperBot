@@ -9,4 +9,11 @@
         android:id="@+id/search_name"
         android:layout_weight="1"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/load_Question_Search_Button"
+        android:layout_weight="1"/>
+
 </LinearLayout>

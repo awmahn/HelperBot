@@ -1,6 +1,8 @@
 package com.example.awmahn.helperbot;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -63,11 +66,14 @@ public class QuestionsListActivity extends AppCompatActivity{
         public class ViewHolder extends RecyclerView.ViewHolder {
 
             public TextView mNameTextView;
+            public Button mSearchButton;
 
             public ViewHolder(View itemView) {
                 super(itemView);
 
                 mNameTextView = (TextView) itemView.findViewById(R.id.search_name);
+                mSearchButton = (Button) itemView.findViewById(R.id.load_Question_Search_Button);
+
             }
 
         }
@@ -88,9 +94,20 @@ public class QuestionsListActivity extends AppCompatActivity{
 
         @Override
         public void onBindViewHolder(QuestionAdapter.ViewHolder holder, int position) {
-            searchDB search = mSearches.get(position);
+            final searchDB search = mSearches.get(position);
             TextView textView = holder.mNameTextView;
             textView.setText(search.get_id());
+
+            Button searchButton = holder.mSearchButton;
+            searchButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri uri = Uri.parse(search.get_url());
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+                    finish();
+                }
+            });
         }
 
         @Override
