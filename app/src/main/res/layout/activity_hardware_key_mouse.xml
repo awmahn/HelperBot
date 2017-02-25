@@ -27,5 +27,38 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/textView27"
         android:textColor="@android:color/background_dark"
-        android:textSize="16sp" />
+        android:textSize="24sp"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="Yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView27"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="107dp"
+        android:id="@+id/deviceSeatedYes" />
+
+    <TextView
+        android:text="Please follow the cable of your device to the port it should be plugged into. Is the connector firmly seated?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/textView28"
+        android:layout_below="@+id/textView27"
+        android:layout_alignLeft="@+id/textView27"
+        android:layout_alignStart="@+id/textView27"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark" />
+
+    <Button
+        android:text="No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deviceSeatedYes"
+        android:layout_alignLeft="@+id/deviceSeatedYes"
+        android:layout_alignStart="@+id/deviceSeatedYes"
+        android:layout_marginTop="14dp"
+        android:id="@+id/deviceSeatedNo" />
 </RelativeLayout>

@@ -39,7 +39,8 @@
         <activity android:name=".HowDoIProgramActivity" />
         <activity android:name=".HowDoIProblemActivity" />
         <activity android:name=".PeripheralNotWorkingActivity" />
-        <activity android:name=".HardwareKeyMouseActivity"></activity>
+        <activity android:name=".HardwareKeyMouseActivity" />
+        <activity android:name=".HardwarePrinterGetModelActivity"></activity>
     </application>
 
 </manifest>

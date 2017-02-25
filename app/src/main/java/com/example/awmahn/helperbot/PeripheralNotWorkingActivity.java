@@ -9,7 +9,7 @@ import android.widget.Button;
 public class PeripheralNotWorkingActivity extends AppCompatActivity {
     private questions mQuestion;
     private Button mKeyboardMouseButton;
-    //private Button mPrinterButton;
+    private Button mPrinterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,19 @@ public class PeripheralNotWorkingActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.putExtra("question", mQuestion);
                 i.setClass(PeripheralNotWorkingActivity.this, HardwareKeyMouseActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        // Printer problems
+        mPrinterButton = (Button) findViewById(R.id.hardwarePrinterButton);
+        mPrinterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+                i.setClass(PeripheralNotWorkingActivity.this, HardwarePrinterGetModelActivity.class);
                 startActivity(i);
                 finish();
             }

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hardware_printer_get_model"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.awmahn.helperbot.HardwarePrinterGetModelActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/troublebanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView23" />
+
+    <TextView
+        android:text="Printer Troubleshooting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView23"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView29"
+        android:textSize="24sp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="Enter printer model name below (e.g. HP LaserJet 4050n) and then select the problem."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:id="@+id/textView30"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="17dp"
+        android:id="@+id/editTextPrinterModel"
+        android:textAlignment="center"
+        android:hint="Printer Model"
+        android:layout_below="@+id/textView30"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Printer not turning on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPrinterModel"
+        android:layout_marginTop="19dp"
+        android:id="@+id/printerNotOnButton"
+        android:layout_alignRight="@+id/printerJamsButton"
+        android:layout_alignEnd="@+id/printerJamsButton"
+        android:layout_alignLeft="@+id/printerJamsButton"
+        android:layout_alignStart="@+id/printerJamsButton" />
+
+    <Button
+        android:text="Printer frequently jams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/printerJamsButton"
+        android:layout_below="@+id/printerNotOnButton"
+        android:layout_alignRight="@+id/editTextPrinterModel"
+        android:layout_alignEnd="@+id/editTextPrinterModel" />
+
+    <Button
+        android:text="Ink lines or streaking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/printerStreakingButton"
+        android:layout_below="@+id/printerJamsButton"
+        android:layout_alignLeft="@+id/printerJamsButton"
+        android:layout_alignStart="@+id/printerJamsButton"
+        android:layout_alignRight="@+id/printerJamsButton"
+        android:layout_alignEnd="@+id/printerJamsButton" />
+</RelativeLayout>
