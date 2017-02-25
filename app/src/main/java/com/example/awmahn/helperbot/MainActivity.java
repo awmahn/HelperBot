@@ -35,15 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void GoogleSearch(View view) {
-        EditText googleSearchBox = (EditText) findViewById(R.id.googleSearchBox);
-        String search = googleSearchBox.getText().toString();
-        questions currentQuestions = new questions();
-        currentQuestions.setTraditionalSearch(search);
-        Uri uri = Uri.parse(currentQuestions.generateSearchURL());
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
-    }
+
 
     public void createNewSearch(View view) {
         questions question = new questions();
