@@ -11,6 +11,7 @@ public class HardwareProblemType extends AppCompatActivity {
     private questions mQuestion;
     private Button mBackButton;
     private Button mNotTurningOnButton;
+    private Button mPeripheralProblemButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class HardwareProblemType extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
-
+        // Device does not turn on
         mNotTurningOnButton = (Button) findViewById(R.id.deviceWillNotTurnOn);
         mNotTurningOnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,20 @@ public class HardwareProblemType extends AppCompatActivity {
             }
         });
 
+        // Peripheral device not working
+        mPeripheralProblemButton = (Button) findViewById(R.id.peripheralNotWorking);
+        mPeripheralProblemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+                i.setClass(HardwareProblemType.this, PeripheralNotWorkingActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        // Go back
         mBackButton = (Button) findViewById(R.id.hardwareProblemTypeBackButton);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
