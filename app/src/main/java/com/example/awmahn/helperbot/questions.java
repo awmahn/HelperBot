@@ -34,7 +34,7 @@ public class questions implements Serializable {
     public questions() {
         mId = UUID.randomUUID();
         searchType = "";
-        name = "Name not set";
+        name = "";
         traditionalSearch = "";
         exactlySearch = "";
         orSearch = "";

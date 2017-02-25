@@ -10,6 +10,7 @@ import android.widget.EditText;
 public class DecisionActivity extends AppCompatActivity {
     private questions mQuestion;
     private Button mSoftwareProblemButton;
+    private Button mHowDoIButton;
     private Button mBackButton;
     private Button mHardwareProblemButton;
     private EditText mSearchNameEditText;
@@ -70,5 +71,18 @@ public class DecisionActivity extends AppCompatActivity {
             }
         });
 
+
+        mHowDoIButton = (Button) findViewById(R.id.decision_How_Do_I_Button);
+        mHowDoIButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mQuestion.setName(mSearchNameEditText.getText().toString());
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+                i.setClass(DecisionActivity.this, HowDoIProblemActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
     }
 }
