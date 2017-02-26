@@ -23,6 +23,7 @@ public class HardwarePrinterGetModelActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // If the user says printer does not turn on ...
         mPrinterNotTurningOn = (Button) findViewById(R.id.printerNotOnButton);
         mPrinterNotTurningOn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,70 @@ public class HardwarePrinterGetModelActivity extends AppCompatActivity {
                 EditText printerModelEditText = (EditText) findViewById(R.id.editTextPrinterModel);
                 String printerModel = printerModelEditText.getText().toString();
                 mQuestion.setTraditionalSearch(mQuestion.getTraditionalSearch() + " " + printerModel + " not turning on");
+                Uri uri = Uri.parse(mQuestion.generateSearchURL());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                //save to database
+
+                //open database
+                mdbHandler = new dbHandler(getApplicationContext(), null);
+
+                // build search object to add to database
+                searchDB search = new searchDB();
+                search.set_name(mQuestion.getName());
+                search.set_url(mQuestion.generateSearchURL());
+
+                //add search to database
+                mdbHandler.addSearch(search);
+
+
+                //close database
+                mdbHandler.close();
+
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // If the user says printer frequently jams...
+        mPrinterJams = (Button) findViewById(R.id.printerJamsButton);
+        mPrinterJams.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText printerModelEditText = (EditText) findViewById(R.id.editTextPrinterModel);
+                String printerModel = printerModelEditText.getText().toString();
+                mQuestion.setTraditionalSearch(mQuestion.getTraditionalSearch() + " " + printerModel + " keeps jamming");
+                Uri uri = Uri.parse(mQuestion.generateSearchURL());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                //save to database
+
+                //open database
+                mdbHandler = new dbHandler(getApplicationContext(), null);
+
+                // build search object to add to database
+                searchDB search = new searchDB();
+                search.set_name(mQuestion.getName());
+                search.set_url(mQuestion.generateSearchURL());
+
+                //add search to database
+                mdbHandler.addSearch(search);
+
+
+                //close database
+                mdbHandler.close();
+
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // If the user says printer has lines or streaks when printing...
+        mPrinterStreaks= (Button) findViewById(R.id.printerStreakingButton);
+        mPrinterStreaks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText printerModelEditText = (EditText) findViewById(R.id.editTextPrinterModel);
+                String printerModel = printerModelEditText.getText().toString();
+                mQuestion.setTraditionalSearch(mQuestion.getTraditionalSearch() + " " + printerModel + " lines or streaking");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 //save to database
