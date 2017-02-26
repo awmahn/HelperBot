@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class HowDoIProblemActivity extends AppCompatActivity {
+    // Initialise variables
     private questions mQuestion;
     private Button mContinueButton;
     private Button mBackButton;
@@ -18,9 +19,11 @@ public class HowDoIProblemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_do_i_problem);
 
+        // Get the question object from the intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // If the button is pressed edit the question object and go to the which program node and pass the questions object forward
         mContinueButton = (Button) findViewById(R.id.how_Do_I_Problem_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +40,7 @@ public class HowDoIProblemActivity extends AppCompatActivity {
         });
 
 
-
+        // If the button is pressed go to the what is your problem node and pass the questions object forward
         mBackButton = (Button) findViewById(R.id.how_Do_I_Problem_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

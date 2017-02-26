@@ -12,6 +12,7 @@ import java.util.List;
 
 //basis for code is from Android recipe 5
 public class dbHandler extends SQLiteOpenHelper {
+    // Set up variables
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "searchDB.db";
     public static final String TABLE_NAME = "SearchHistory";
@@ -25,6 +26,7 @@ public class dbHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // Create database
         String myQuery = "CREATE TABLE " + TABLE_NAME + "(" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_NAME + " TEXT," + COLUMN_URL + " TEXT" +
@@ -34,12 +36,14 @@ public class dbHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Upgrade database
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME + ";");
         onCreate(db);
     }
 
-    // Add record to DB
+
     public void addSearch (searchDB search) {
+        // Add a new search to the database
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, search.get_name());
         values.put(COLUMN_URL, search.get_url());
@@ -48,8 +52,8 @@ public class dbHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Delete record from DB
     public void deleteSearch(int id){
+        // Delete a specific record from the database
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_ID
         + "= \"" + id + "\";");
@@ -57,6 +61,7 @@ public class dbHandler extends SQLiteOpenHelper {
     }
 
     public searchDB findSearch(int id) {
+        // Find a specific record from the database
         SQLiteDatabase db = getReadableDatabase();
         String Query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + id;
 
@@ -76,13 +81,15 @@ public class dbHandler extends SQLiteOpenHelper {
     }
 
     public List<searchDB> findAllSearches() {
+        // Create a list and a qury to fill the list
         List<searchDB> searches = new ArrayList<searchDB>();
         SQLiteDatabase db  = getReadableDatabase();
         String Query = "SELECT * FROM " + TABLE_NAME;
-
+        // Get a cursor and set it to the beginning
         Cursor c = db.rawQuery(Query, null);
 
         c.moveToFirst();
+        // Retrieve all entries from the database and add them to the list
         while (!c.isAfterLast()) {
             if(c.getString(c.getColumnIndex(COLUMN_NAME)) != null && c.getString(c.getColumnIndex(COLUMN_URL)) != null) {
                 searchDB search = new searchDB();
@@ -99,12 +106,12 @@ public class dbHandler extends SQLiteOpenHelper {
         return searches;
     }
 
-    //Print DB contents as String
+    // Print DB contents as String
     public String dbToString() {
         String dbString = "";
         SQLiteDatabase db = getWritableDatabase();
         String myQuery = "SELECT * FROM " + TABLE_NAME;
-        // use cursor to navigate through db
+        // Use cursor to navigate through db
         Cursor c = db.rawQuery(myQuery, null);
         c.moveToFirst();
         while  (!c.isAfterLast()) {

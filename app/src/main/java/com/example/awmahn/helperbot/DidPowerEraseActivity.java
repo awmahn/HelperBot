@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class DidPowerEraseActivity extends AppCompatActivity {
+    // Initialise variables
     private questions mQuestion;
     private Button mYesButton;
     private Button mNoButton;
@@ -17,9 +18,11 @@ public class DidPowerEraseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_did_power_erase);
 
+        // Get question object from intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // If the button is pressed go to the name the virus node and pass the questions object forward
         mYesButton = (Button) findViewById(R.id.did_Power_Erase_Yes_Button);
         mYesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +36,8 @@ public class DidPowerEraseActivity extends AppCompatActivity {
             }
         });
 
+        // If the button is pressed go to the do you want an aggressive backup virus search
+        // Node and pass the questions object forward
         mNoButton = (Button) findViewById(R.id.did_Power_Erase_No_Button);
         mNoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +50,7 @@ public class DidPowerEraseActivity extends AppCompatActivity {
             }
         });
 
-
+        // If the button is pressed go to the have you run a virus scan node and pass the questions object forward
         mBackButton = (Button) findViewById(R.id.did_Power_Erase_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

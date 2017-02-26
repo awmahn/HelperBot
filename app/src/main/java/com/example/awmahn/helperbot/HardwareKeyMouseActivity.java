@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class HardwareKeyMouseActivity extends AppCompatActivity {
+    // Initialise variables
     private questions mQuestion;
     private Button mNoButton;
     private Button mYesButton;
@@ -17,10 +18,11 @@ public class HardwareKeyMouseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware_key_mouse);
 
+        // Get question object from the intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
-
+        // If the button is pressed remind the user to check the connectors, connections, and wires
         mNoButton = (Button) findViewById(R.id.deviceSeatedNo);
         mNoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +31,7 @@ public class HardwareKeyMouseActivity extends AppCompatActivity {
             }
         });
 
+        // If the button is pressed ask the user to go back to the hardware problem solver or go consult a professional
         mYesButton = (Button) findViewById(R.id.deviceSeatedYes);
         mYesButton.setOnClickListener(new View.OnClickListener() {
             @Override

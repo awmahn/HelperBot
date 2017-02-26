@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class HardwarePrinterGetModelActivity extends AppCompatActivity {
+    // Initialise variables
     private questions mQuestion;
     private Button mPrinterNotTurningOn;
     private Button mPrinterJams;
@@ -20,6 +21,7 @@ public class HardwarePrinterGetModelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware_printer_get_model);
 
+        // Get the question object from the intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class hardwareNotTurningOn extends AppCompatActivity {
+    // Initialise variables
     private questions mQuestion;
     private Button mNoButton;
     private Button mYesButton;
@@ -18,6 +19,7 @@ public class hardwareNotTurningOn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware_not_turning_on);
 
+        // Ger the question object from the intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class HardwareProblemType extends AppCompatActivity {
+    // Initialise variables
     private questions mQuestion;
     private Button mBackButton;
     private Button mNotTurningOnButton;
@@ -18,6 +19,7 @@ public class HardwareProblemType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware_problem_type);
 
+        // Get question object from the intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 

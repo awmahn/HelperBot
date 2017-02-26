@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class HaveRunAntivirusActivity extends AppCompatActivity {
+    // Initialise variables
     private questions mQuestion;
     private Button mYesButton;
     private Button mNoButton;
@@ -17,9 +18,11 @@ public class HaveRunAntivirusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_have_run_antivirus);
 
+        // Get the question object from the intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // If the button is pressed go to the was a virus detected node and pass the questions object forward
         mYesButton = (Button) findViewById(R.id.have_Run_Antivirus_Yes_Button);
         mYesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +36,7 @@ public class HaveRunAntivirusActivity extends AppCompatActivity {
             }
         });
 
+        // If the button is pressed go to the do you have an antivirus node and pass the questions object forward
         mNoButton = (Button) findViewById(R.id.have_Run_Antivirus_No_Button);
         mNoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +49,7 @@ public class HaveRunAntivirusActivity extends AppCompatActivity {
             }
         });
 
-
+        // If the button is pressed go to the is the problem a virus node and pass the questions object forward
         mBackButton = (Button) findViewById(R.id.have_Run_Antivirus_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

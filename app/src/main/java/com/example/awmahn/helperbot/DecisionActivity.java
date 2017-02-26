@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class DecisionActivity extends AppCompatActivity {
+    // Set up variables
     private questions mQuestion;
     private Button mSoftwareProblemButton;
     private Button mHowDoIButton;
@@ -21,18 +22,18 @@ public class DecisionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_decision);
 
 
-
+        // Retrieve question object from storage in the intent
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
-
+        // If for some reason there is an existing name in the question object then show it
         mSearchNameEditText = (EditText) findViewById(R.id.decision_Name_EditText);
-        if (mQuestion.getTraditionalSearch().equals("")) {
-            //do nothing
+        if (mQuestion.getName().equals("")) {
+            // Do nothing
         }
         else {
-            mSearchNameEditText.setText(mQuestion.getTraditionalSearch());
+            mSearchNameEditText.setText(mQuestion.getName());
         }
-
+        // If the button is pressed go to the software issue node and pass the question object forward
         mSoftwareProblemButton = (Button) findViewById(R.id.softwareIssueButton);
         mSoftwareProblemButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,19 +46,15 @@ public class DecisionActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+        // If the button is pressed go back to the starting node
         mBackButton = (Button) findViewById(R.id.decision_back_button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent();
-                i.putExtra("question", mQuestion);
-                i.setClass(DecisionActivity.this, MainActivity.class);
-                startActivity(i);
                 finish();
             }
         });
-
+        // If the button is pressed go to the hardware issue node and pass the questions object forward
         mHardwareProblemButton = (Button) findViewById(R.id.hardwareIssueButton);
         mHardwareProblemButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +68,7 @@ public class DecisionActivity extends AppCompatActivity {
             }
         });
 
-
+        // If the button is pressed go to the how do I node and pass the questions object forward
         mHowDoIButton = (Button) findViewById(R.id.decision_How_Do_I_Button);
         mHowDoIButton.setOnClickListener(new View.OnClickListener() {
             @Override
