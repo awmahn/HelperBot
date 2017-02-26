@@ -11,27 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.OtherSearchActivity">
 
-    <Button
-        android:text="Back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/other_Search_Back_Button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="61dp" />
-
-    <Button
-        android:text="Continue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/other_Search_Continue_Button"
-        android:layout_above="@+id/other_Search_Back_Button"
-        android:layout_alignLeft="@+id/other_Search_Back_Button"
-        android:layout_alignStart="@+id/other_Search_Back_Button"
-        android:layout_marginBottom="57dp" />
-
     <TextView
-        android:text="Please enter a brief description of the problem"
+        android:text="Please enter a brief description of the problem and the name of the application or program"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
@@ -43,6 +24,24 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/troublebanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView14" />
+
+    <Button
+        android:text="Continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/other_Search_Continue_Button"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/other_Search_Back_Button"
+        android:layout_alignLeft="@+id/other_Search_Back_Button"
+        android:layout_alignStart="@+id/other_Search_Back_Button" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,14 +50,29 @@
         android:id="@+id/other_Search_EditText"
         android:hint="Problem Description"
         android:textAlignment="center"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView18"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp" />
 
-    <ImageView
+    <Button
+        android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/troublebanner"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/imageView14" />
+        android:id="@+id/other_Search_Back_Button"
+        android:layout_marginBottom="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/other_Search_Application_Name_EditText"
+        android:layout_below="@+id/other_Search_EditText"
+        android:layout_alignLeft="@+id/other_Search_EditText"
+        android:layout_alignStart="@+id/other_Search_EditText"
+        android:layout_marginTop="18dp"
+        android:hint="Application Name"
+        android:textAlignment="center" />
 </RelativeLayout>

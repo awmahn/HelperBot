@@ -11,6 +11,7 @@ import android.widget.EditText;
 public class OtherSearchActivity extends AppCompatActivity {
     private questions mQuestion;
     private Button mContinueButton;
+    private EditText mProblemDescription;
     private EditText mProgramName;
     private Button mBackButton;
     dbHandler mdbHandler;
@@ -23,20 +24,15 @@ public class OtherSearchActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
-        mProgramName = (EditText) findViewById(R.id.other_Search_EditText);
-        if (mQuestion.getTraditionalSearch().equals("")) {
-            // Do nothing if the search is empty
-        }
-        else {
-            mProgramName.setText(mQuestion.getTraditionalSearch());
-        }
+        mProgramName = (EditText) findViewById(R.id.other_Search_Application_Name_EditText);
+        mProblemDescription = (EditText) findViewById(R.id.other_Search_EditText);
 
         // Do the search
         mContinueButton = (Button) findViewById(R.id.other_Search_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mQuestion.setTraditionalSearch(mProgramName.getText().toString());
+                mQuestion.setTraditionalSearch(mProblemDescription.getText().toString() + " " + mProgramName.getText().toString());
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 // Save to database

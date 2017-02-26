@@ -44,7 +44,7 @@
             android:textAlignment="center" />
 
         <Button
-            android:text="How Do I ... ?"
+            android:text="Learn how to ... issue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/decision_How_Do_I_Button"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:id="@+id/hardwareIssueButton"
-            android:text="Hardware Issue"
+            android:text="Peripheral  Issue"
             android:background="@color/colorPrimary"
             android:textSize="18sp"
             android:textColor="@android:color/background_light"
@@ -74,7 +74,7 @@
             android:layout_alignParentEnd="true" />
 
         <Button
-            android:text="Software Issue"
+            android:text="Program or computer not working Issue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
