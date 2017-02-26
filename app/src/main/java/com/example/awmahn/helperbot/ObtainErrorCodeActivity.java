@@ -27,32 +27,33 @@ public class ObtainErrorCodeActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // Perform a search on error code with program name
         mContinueButton = (Button) findViewById(R.id.obtain_Error_Code_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mErrorCodeEditText = (EditText) findViewById(R.id.obtain_Error_Code_Error_Code_EditText);
-                mProgramEditText = (EditText) findViewById(R.id.obtain_Error_Code_Program_Name_EditText);
+                mErrorCodeEditText = (EditText) findViewById(R.id.obtain_Error_Code_Error_Code_EditText); // Error code
+                mProgramEditText = (EditText) findViewById(R.id.obtain_Error_Code_Program_Name_EditText); // Software name
                 mErrorCode = mErrorCodeEditText.getText().toString();
                 mProgram = mProgramEditText.getText().toString();
                 mQuestion.setTraditionalSearch(mProgram + " " + mErrorCode);
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
 
@@ -62,7 +63,7 @@ public class ObtainErrorCodeActivity extends AppCompatActivity {
         });
 
 
-
+        // Go back
         mBackButton = (Button) findViewById(R.id.obtain_Error_Code_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

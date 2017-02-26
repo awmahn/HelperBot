@@ -23,6 +23,7 @@ public class WantPowerEraseActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // User does want to do Power Eraser, etc.
         mYesButton = (Button) findViewById(R.id.want_Power_Erase_Yes_Button);
         mYesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,21 +31,21 @@ public class WantPowerEraseActivity extends AppCompatActivity {
                 mQuestion.setTraditionalSearch("Best second opinion antivirus");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
                 startActivity(intent);
@@ -52,6 +53,7 @@ public class WantPowerEraseActivity extends AppCompatActivity {
             }
         });
 
+        // User does not want to do Power Eraser
         mNoButton = (Button) findViewById(R.id.want_Power_Erase_No_Button);
         mNoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +67,7 @@ public class WantPowerEraseActivity extends AppCompatActivity {
             }
         });
 
-
+        // Go back
         mBackButton = (Button) findViewById(R.id.want_Power_Erase_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

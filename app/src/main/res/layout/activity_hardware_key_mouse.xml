@@ -61,4 +61,13 @@
         android:layout_alignStart="@+id/deviceSeatedYes"
         android:layout_marginTop="14dp"
         android:id="@+id/deviceSeatedNo" />
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/keyboardGoBackButton" />
 </RelativeLayout>

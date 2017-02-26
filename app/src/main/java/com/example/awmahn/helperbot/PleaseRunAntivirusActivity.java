@@ -19,7 +19,7 @@ public class PleaseRunAntivirusActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
-
+        // Continue user to antivirus activity
         mContinueButton = (Button) findViewById(R.id.please_Run_Antivirus_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +33,7 @@ public class PleaseRunAntivirusActivity extends AppCompatActivity {
             }
         });
 
+        // Go back
         mBackButton = (Button) findViewById(R.id.please_Run_Antivirus_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

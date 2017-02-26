@@ -12,6 +12,7 @@ public class hardwareNotTurningOn extends AppCompatActivity {
     private questions mQuestion;
     private Button mNoButton;
     private Button mYesButton;
+    private Button mBackButton;
     //private Button mBackButton;
 
     @Override
@@ -41,6 +42,20 @@ public class hardwareNotTurningOn extends AppCompatActivity {
             }
         });
 
+        // Go back to prior activity
+        mBackButton = (Button) findViewById(R.id.notTurnOnBackButton);
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+
+                i.setClass(hardwareNotTurningOn.this, HardwareProblemType.class);
+
+                startActivity(i);
+                finish();
+            }
+        });
 
     }
 }

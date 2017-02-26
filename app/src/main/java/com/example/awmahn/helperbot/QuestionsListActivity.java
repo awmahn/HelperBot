@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.List;
 
 
-//Initial code comes from https://guides.codepath.com/android/using-the-recyclerview and the textbook
+// Initial code comes from https://guides.codepath.com/android/using-the-recyclerview and the textbook
 
 
 public class QuestionsListActivity extends AppCompatActivity{

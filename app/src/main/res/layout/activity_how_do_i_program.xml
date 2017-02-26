@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_how_do_i_program"
     android:layout_width="match_parent"
@@ -10,15 +11,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.awmahn.helperbot.HowDoIProgramActivity">
 
-    <TextView
-        android:text="Please enter the program that you are having trouble with."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:id="@+id/textView22" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,24 +20,46 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
         android:id="@+id/how_Do_I_Program_Program_EditText"
-        android:hint="Program" />
+        android:hint="Program Name"
+        android:textAlignment="center" />
 
-    <Button
-        android:text="Continue"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="133dp"
-        android:id="@+id/how_Do_I_Program_Continue_Button" />
+        app:srcCompat="@drawable/troublebanner"
+        android:id="@+id/imageView24"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Please enter the program that you are having trouble with."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView22"
+        android:layout_below="@+id/imageView24"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@android:color/background_dark" />
 
     <Button
         android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/how_Do_I_Program_Back_Button"
+        android:layout_alignTop="@+id/how_Do_I_Program_Continue_Button"
         android:layout_alignLeft="@+id/how_Do_I_Program_Continue_Button"
         android:layout_alignStart="@+id/how_Do_I_Program_Continue_Button"
-        android:layout_marginBottom="60dp"
-        android:id="@+id/how_Do_I_Program_Back_Button" />
+        android:layout_marginTop="61dp" />
+
+    <Button
+        android:text="Continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/how_Do_I_Program_Continue_Button"
+        android:layout_below="@+id/how_Do_I_Program_Program_EditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
 </RelativeLayout>

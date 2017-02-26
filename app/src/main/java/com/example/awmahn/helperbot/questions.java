@@ -6,9 +6,6 @@ import java.util.UUID;
 import java.util.jar.Attributes;
 import java.io.Serializable;
 
-/**
- * Created by Robert on 2/9/2017.
- */
 
 public class questions implements Serializable {
     private UUID mId;
@@ -31,6 +28,7 @@ public class questions implements Serializable {
     private String fileType;
     private String usageRights;
 
+    // Parameters for search
     public questions() {
         mId = UUID.randomUUID();
         searchType = "";

@@ -25,13 +25,13 @@ public class NotStartSearchActivity extends AppCompatActivity {
 
         mProgramName = (EditText) findViewById(R.id.not_Start_Search_EditText);
         if (mQuestion.getTraditionalSearch().equals("")) {
-            //do nothing
+            // Do nothing if search is empty
         }
         else {
             mProgramName.setText(mQuestion.getTraditionalSearch());
         }
 
-
+        // Perform a search for program not starting
         mContinueButton = (Button) findViewById(R.id.not_Start_Search_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,21 +39,21 @@ public class NotStartSearchActivity extends AppCompatActivity {
                 mQuestion.setTraditionalSearch(mProgramName.getText().toString() + " not starting");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
 
@@ -62,7 +62,7 @@ public class NotStartSearchActivity extends AppCompatActivity {
             }
         });
 
-
+        // Go back to prior activity
         mBackButton = (Button) findViewById(R.id.not_Start_Search_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

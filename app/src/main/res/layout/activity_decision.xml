@@ -14,7 +14,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <ImageView
             android:layout_width="match_parent"
@@ -28,7 +29,10 @@
             android:text="Please enter a name to remember the search by."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView23" />
+            android:id="@+id/textView23"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark" />
 
         <EditText
             android:layout_width="match_parent"
@@ -36,7 +40,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/decision_Name_EditText"
-            android:hint="Name" />
+            android:hint="My Search Name"
+            android:textAlignment="center" />
 
         <Button
             android:text="How Do I ... ?"
@@ -82,6 +87,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView32"
+            android:layout_weight="1.07" />
 
         <Button
             android:text="Back"

@@ -12,6 +12,7 @@ public class IsItAVirusActivity extends AppCompatActivity {
     private Button mYesButton;
     private Button mNoButton;
     private Button mBackButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class IsItAVirusActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // Yes, problem is a virus...
         mYesButton = (Button) findViewById(R.id.is_A_Virus_Yes_Button);
         mYesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +34,7 @@ public class IsItAVirusActivity extends AppCompatActivity {
             }
         });
 
+        // No, problem is not a virus...
         mNoButton = (Button) findViewById(R.id.is_A_Virus_No_Button);
         mNoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +47,7 @@ public class IsItAVirusActivity extends AppCompatActivity {
             }
         });
 
-
+        // Go back to prior activity
         mBackButton = (Button) findViewById(R.id.is_A_Virus_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

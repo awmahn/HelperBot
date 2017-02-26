@@ -45,16 +45,6 @@
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp" />
 
-    <Button
-        android:text="No"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:id="@+id/did_Detect_Virus_No_Button"
-        android:layout_below="@+id/did_Detect_Virus_Yes_Button"
-        android:layout_alignLeft="@+id/did_Detect_Virus_Yes_Button"
-        android:layout_alignStart="@+id/did_Detect_Virus_Yes_Button" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,4 +52,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/imageView9" />
+
+    <Button
+        android:text="No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/did_Detect_Virus_No_Button"
+        android:layout_below="@+id/did_Detect_Virus_Yes_Button"
+        android:layout_alignLeft="@+id/did_Detect_Virus_Yes_Button"
+        android:layout_alignStart="@+id/did_Detect_Virus_Yes_Button" />
 </RelativeLayout>

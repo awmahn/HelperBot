@@ -14,6 +14,7 @@ public class HardwarePrinterGetModelActivity extends AppCompatActivity {
     private Button mPrinterNotTurningOn;
     private Button mPrinterJams;
     private Button mPrinterStreaks;
+    private Button mBackButton;
     dbHandler mdbHandler;
 
     @Override
@@ -117,6 +118,21 @@ public class HardwarePrinterGetModelActivity extends AppCompatActivity {
                 mdbHandler.close();
 
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        // Go back to prior activity
+        mBackButton = (Button) findViewById(R.id.printerBackButton);
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+
+                i.setClass(HardwarePrinterGetModelActivity.this, PeripheralNotWorkingActivity.class);
+
+                startActivity(i);
                 finish();
             }
         });

@@ -24,16 +24,18 @@ public class NameVirusActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
         mActivityBefore = (String) i.getSerializableExtra("activityBefore");
+            // Note the activity user just came from
 
+        // Store the name of supposed virus
         mVirusName = (EditText) findViewById(R.id.name_Virus_EditText);
         if (mQuestion.getTraditionalSearch().equals("")) {
-            //do nothing
+            // Do nothing if search empty
         }
         else {
             mVirusName.setText(mQuestion.getTraditionalSearch());
         }
 
-
+        // Find pertinent info on virus removal
         mContinueButton = (Button) findViewById(R.id.name_Virus_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,21 +43,21 @@ public class NameVirusActivity extends AppCompatActivity {
                 mQuestion.setTraditionalSearch(mVirusName.getText().toString() + " virus removal");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
 
@@ -64,7 +66,7 @@ public class NameVirusActivity extends AppCompatActivity {
             }
         });
 
-
+        // Go back, depending on prior activity
         mBackButton = (Button) findViewById(R.id.name_Virus_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

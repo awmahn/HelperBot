@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Robert on 2/14/2017.
- */
 
 public class questionsListSinglton {
     private static questionsListSinglton sQuestionsListSinglton;
@@ -17,6 +14,7 @@ public class questionsListSinglton {
 
     private List<questions> mQuestions;
 
+    // If null then create a new questionsListSinglton
     public static questionsListSinglton get(Context context) {
         if (sQuestionsListSinglton == null) {
             sQuestionsListSinglton = new questionsListSinglton(context);

@@ -12,6 +12,7 @@ public class HardwareKeyMouseActivity extends AppCompatActivity {
     private questions mQuestion;
     private Button mNoButton;
     private Button mYesButton;
+    private Button mBackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,20 @@ public class HardwareKeyMouseActivity extends AppCompatActivity {
             }
         });
 
+        // Go back to prior activity
+        mBackButton = (Button) findViewById(R.id.keyboardGoBackButton);
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+
+                i.setClass(HardwareKeyMouseActivity.this, HardwareProblemType.class);
+
+                startActivity(i);
+                finish();
+            }
+        });
 
 
 

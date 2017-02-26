@@ -21,6 +21,7 @@ public class TriedOnOffActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // User has rebooted their device
         mYesButton = (Button) findViewById(R.id.tried_On_Off_Yes_Button);
         mYesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,15 +34,16 @@ public class TriedOnOffActivity extends AppCompatActivity {
             }
         });
 
+        // User has not restarted their device
         mNoButton = (Button) findViewById(R.id.tried_On_Off_No_Button);
         mNoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(TriedOnOffActivity.this, "Please restart the device", Toast.LENGTH_LONG).show();
+                Toast.makeText(TriedOnOffActivity.this, "Please restart the device", Toast.LENGTH_LONG).show(); // Tell user to reboot!
             }
         });
 
-
+        // Go back
         mBackButton = (Button) findViewById(R.id.tried_On_Off_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,13 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-
 public class MainActivity extends AppCompatActivity {
-    // This is a test comment...
-    //
 
     private final String QUESTION = "QUESTION_PARCELABLE_KEY";
-
     private Button mLoadSearchButton;
 
     @Override
@@ -24,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Load a prior search that the user has already performed
         mLoadSearchButton = (Button) findViewById(R.id.loadSearchButton);
         mLoadSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
+    // Create new search
     public void createNewSearch(View view) {
         questions question = new questions();
         Intent i = new Intent();

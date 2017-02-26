@@ -27,13 +27,13 @@ public class ScreenTurnsColorSearchActivity extends AppCompatActivity {
 
         mProgramName = (EditText) findViewById(R.id.screen_Turns_Color_EditText);
         if (mQuestion.getTraditionalSearch().equals("")) {
-            //do nothing
+            // If string empty, do nothing
         }
         else {
-            mProgramName.setText(mQuestion.getTraditionalSearch());
+            mProgramName.setText(mQuestion.getTraditionalSearch()); // Traditional search
         }
 
-
+        // The screen is turning WHITE
         mWhiteButton = (Button) findViewById(R.id.screen_Turns_Color_White_Button);
         mWhiteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,21 +41,21 @@ public class ScreenTurnsColorSearchActivity extends AppCompatActivity {
                 mQuestion.setTraditionalSearch(mProgramName.getText().toString() + " white screen");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
                 startActivity(intent);
@@ -63,6 +63,7 @@ public class ScreenTurnsColorSearchActivity extends AppCompatActivity {
             }
         });
 
+        // The screen is turning BLACK
         mBlackButton = (Button) findViewById(R.id.screen_Turns_Color_Black_Button);
         mBlackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,21 +71,21 @@ public class ScreenTurnsColorSearchActivity extends AppCompatActivity {
                 mQuestion.setTraditionalSearch(mProgramName.getText().toString() + " black screen");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
 
@@ -93,6 +94,7 @@ public class ScreenTurnsColorSearchActivity extends AppCompatActivity {
             }
         });
 
+        // The screen is turning BLUE
         mBlueButton = (Button) findViewById(R.id.screen_Turns_Color_Blue_Button);
         mBlueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,21 +102,21 @@ public class ScreenTurnsColorSearchActivity extends AppCompatActivity {
                 mQuestion.setTraditionalSearch(mProgramName.getText().toString() + " blue screen");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
 
@@ -123,7 +125,7 @@ public class ScreenTurnsColorSearchActivity extends AppCompatActivity {
             }
         });
 
-
+        // Go back to prior activity
         mBackButton = (Button) findViewById(R.id.screen_Turns_Color_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

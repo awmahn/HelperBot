@@ -10,6 +10,7 @@ public class PeripheralNotWorkingActivity extends AppCompatActivity {
     private questions mQuestion;
     private Button mKeyboardMouseButton;
     private Button mPrinterButton;
+    private Button mBackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class PeripheralNotWorkingActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
-        // Keyboard/mouse/etc. issue
+        // Keyboard, mouse, etc. problems
         mKeyboardMouseButton = (Button) findViewById(R.id.hardwareKeyboardMouseButton);
         mKeyboardMouseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,20 @@ public class PeripheralNotWorkingActivity extends AppCompatActivity {
             }
         });
 
+        // Go back to prior activity
+        mBackButton = (Button) findViewById(R.id.hardwareBackButton);
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.putExtra("question", mQuestion);
+
+                i.setClass(PeripheralNotWorkingActivity.this, HardwareProblemType.class);
+
+                startActivity(i);
+                finish();
+            }
+        });
 
 
     }

@@ -22,6 +22,7 @@ public class OSForAntivirusActivity extends AppCompatActivity {
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
+        // Perform a search to help user find compatible antivirus software
         mContinueButton = (Button) findViewById(R.id.os_For_Antivirus_Continue_Button);
         mContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,21 +32,21 @@ public class OSForAntivirusActivity extends AppCompatActivity {
                 mQuestion.setTraditionalSearch("antivirus for " + os);
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                //save to database
+                // Save to database
 
-                //open database
+                // Open database
                 mdbHandler = new dbHandler(getApplicationContext(), null);
 
-                // build search object to add to database
+                // Build search object to add to database
                 searchDB search = new searchDB();
                 search.set_name(mQuestion.getName());
                 search.set_url(mQuestion.generateSearchURL());
 
-                //add search to database
+                // Add search to database
                 mdbHandler.addSearch(search);
 
 
-                //close database
+                // Close database
                 mdbHandler.close();
 
 
@@ -55,7 +56,7 @@ public class OSForAntivirusActivity extends AppCompatActivity {
         });
 
 
-
+        // Go back
         mBackButton = (Button) findViewById(R.id.os_For_Antivirus_Back_Button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
