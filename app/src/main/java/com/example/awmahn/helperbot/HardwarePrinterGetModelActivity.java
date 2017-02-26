@@ -20,7 +20,6 @@ public class HardwarePrinterGetModelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware_printer_get_model);
 
-
         Intent i = getIntent();
         mQuestion = (questions)i.getSerializableExtra("question");
 
@@ -28,9 +27,9 @@ public class HardwarePrinterGetModelActivity extends AppCompatActivity {
         mPrinterNotTurningOn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText programEditText = (EditText) findViewById(R.id.editTextPrinterModel);
-                String program = programEditText.getText().toString();
-                mQuestion.setTraditionalSearch(mQuestion.getTraditionalSearch() + " " + program);
+                EditText printerModelEditText = (EditText) findViewById(R.id.editTextPrinterModel);
+                String printerModel = printerModelEditText.getText().toString();
+                mQuestion.setTraditionalSearch(mQuestion.getTraditionalSearch() + " " + printerModel + " not turning on");
                 Uri uri = Uri.parse(mQuestion.generateSearchURL());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 //save to database
